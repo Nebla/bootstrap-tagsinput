@@ -214,5 +214,7 @@ describe("bootstrap-tagsinput", function() {
         expect(this.$element.tagsinput('items').length).toBe(1);
       });
     });
+
+
   });  
 });

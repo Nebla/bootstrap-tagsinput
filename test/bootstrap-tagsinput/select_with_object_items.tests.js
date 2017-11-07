@@ -19,6 +19,8 @@ describe("bootstrap-tagsinput", function() {
           expect($('.tag', this.$sandbox).text()).toBe("some");
         });
 
+
+
         describe("change item's value and text and invoke 'refesh'", function() {
           beforeEach(function() {
             item.value = 2;

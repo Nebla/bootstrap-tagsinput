@@ -145,5 +145,21 @@ describe("bootstrap-tagsinput", function() {
         });
       });
     });
+
+    describe("Cannot add special chars like backslash and quotes", function() {
+      testTagsInput('<input type="text"/>', function() {
+        it("Should escape backslash and add it", function() {
+          this.$element.tagsinput('add', '\\');
+          expect(this.$element.tagsinput('items').length).toBe(1);
+          expect(this.$element.tagsinput('items')[0]).toBe('\\');
+        });
+
+        it("Should escape double quotes and add it", function() {
+          this.$element.tagsinput('add', '"');
+          expect(this.$element.tagsinput('items').length).toBe(1);
+          expect(this.$element.tagsinput('items')[0]).toBe('"');
+        });
+      });
+    });
   });
 });
